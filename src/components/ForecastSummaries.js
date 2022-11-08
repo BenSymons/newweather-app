@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import ForecastSummary from "./ForecastSummary";
 
+import "../styles/ForecastSummaries.css";
+
 function ForecastSummaries({ forecasts }) {
   return (
     <div className="forecast-summaries">
@@ -24,7 +26,7 @@ ForecastSummaries.propTypes = {
     PropTypes.shape({
       date: PropTypes.number,
       description: PropTypes.string,
-      icon: PropTypes.number,
+      icon: PropTypes.string,
       temperature: PropTypes.shape({
         max: PropTypes.number,
         min: PropTypes.number,

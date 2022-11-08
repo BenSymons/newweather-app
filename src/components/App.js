@@ -9,7 +9,7 @@ function App({ location, predictions }) {
   which is the prop name that App is passing down which is also the data forecast.forecasts
   */
   return (
-    <div className="App">
+    <div className="weather-app">
       <LocationDetails city={location.city} country={location.country} />
       <ForecastSummaries forecasts={predictions} />
     </div>
