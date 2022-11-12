@@ -4,16 +4,19 @@ import ForecastSummary from "./ForecastSummary";
 
 import "../styles/ForecastSummaries.css";
 
-function ForecastSummaries({ forecasts }) {
+function ForecastSummaries({ forecasts, onForecastSelect }) {
   return (
     <div className="forecast-summaries">
       {forecasts.map((forecast) => (
-        <ForecastSummary
+        <ForecastSummary /* this is the list of props that we are passing the ones that we receive are in the brackets above */
           key={forecast.date}
           date={forecast.date}
           description={forecast.description}
           icon={forecast.icon}
           temperature={forecast.temperature}
+          onSelect={
+            onForecastSelect
+          } /* Here we are passing the eventhandler from app to Forecast summaries and now from here to forecast summary ,note also that the function is included in the validation */
         />
       ))}
     </div>
@@ -33,4 +36,5 @@ ForecastSummaries.propTypes = {
       }),
     })
   ).isRequired,
+  onForecastSelect: PropTypes.func.isRequired,
 };
