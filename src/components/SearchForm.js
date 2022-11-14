@@ -1,12 +1,29 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function SearchForm() {
+function SearchForm({ searchText, setSearchText, onSubmit }) {
+  // eslint-disable-next-line no-console
+  const handleInputChange = (event) => setSearchText(event.target.value);
+  /* At the moment, when text is entered into the text box, 
+  we have no way of referencing the value in the text box. 
+  To be able to use the value, we first need to capture it in the component's state. */
   return (
     <div className="search-form">
-      <input type="text" />
-      <button type="submit">Search</button>
+      <input type="text" onChange={handleInputChange} value={searchText} />
+      <button
+        type="submit"
+        onClick={onSubmit}
+        data-testid="search-form__button"
+      >
+        Search
+      </button>
     </div>
   );
 }
-
 export default SearchForm;
+
+SearchForm.propTypes = {
+  searchText: PropTypes.string.isRequired,
+  setSearchText: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};

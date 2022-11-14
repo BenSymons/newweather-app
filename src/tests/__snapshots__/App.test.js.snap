@@ -13,8 +13,10 @@ exports[`App renders correctly 1`] = `
     >
       <input
         type="text"
+        value=""
       />
       <button
+        data-testid="search-form__button"
         type="submit"
       >
         Search
