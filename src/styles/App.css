@@ -1,7 +1,8 @@
-.weather-app {
+.weather-app{
   margin: 0 20px;
+  display: flex;
+  flex-direction: column;
 }
-.App {
-  text-align: center;
-  background-color: rgb(58, 117, 142);
+.weather-app > * {
+  padding: 20px 0px;
 }

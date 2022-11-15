@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/SearchForm.css";
 
 function SearchForm({ searchText, setSearchText, onSubmit }) {
   // eslint-disable-next-line no-console
@@ -9,10 +10,16 @@ function SearchForm({ searchText, setSearchText, onSubmit }) {
   To be able to use the value, we first need to capture it in the component's state. */
   return (
     <div className="search-form">
-      <input type="text" onChange={handleInputChange} value={searchText} />
+      <input
+        type="text"
+        onChange={handleInputChange}
+        value={searchText}
+        className="search-form__input"
+      />
       <button
         type="submit"
         onClick={onSubmit}
+        className="search-form__button"
         data-testid="search-form__button"
       >
         Search
